@@ -28,7 +28,7 @@ node{
    stage('Pull Docker Image and Deploy'){
       def dockerRun= 'sudo docker run -p 8080:8080 -d --name javatomcatmaven-$BUILD_NUMBER rajnikhattarrsinha/javatomcatmaven:2.0.0'
       sshagent(['dockerdeployserver2']) {
-        sh "ssh -o StrictHostKeyChecking=no ubuntu@34.239.128.128 ${dockerRun}"         
+        sh "ssh -o StrictHostKeyChecking=no ubuntu@18.215.68.236 ${dockerRun}"         
       }
    }   
 }
