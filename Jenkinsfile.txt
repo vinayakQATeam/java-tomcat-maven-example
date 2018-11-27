@@ -4,7 +4,7 @@ node {
    def mvnHome
    stage('git checkout') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/LovesCloud/java-tomcat-maven-example'
+      git 'https://github.com/rajnikhattarrsinha/java-tomcat-maven-example'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
@@ -20,7 +20,7 @@ node {
    }
    stage('deploy') {
     sshagent(['807ca4ff-aa82-4c14-b9e5-5cba44515031']) {
-        sh 'scp -o StrictHostKeyChecking=no target/*.war root@54.157.26.234:/opt/tomcat/webapps'
+        sh 'scp -o StrictHostKeyChecking=no target/*.war root@34.192.236.63:/opt/tomcat/webapps'
     }
    }
 }
